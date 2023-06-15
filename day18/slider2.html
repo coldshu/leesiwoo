@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <img id="slider" width="500px">
+    <button onclick="prev()">&lt;&lt;&lt;</button>
+    <button onclick="next()">&gt;&gt;&gt;</button>
+  </div>
+  <script>
+    // JavaScript의 표준은 ES
+    let index = 0;
+    const images = ['img_woods_wide.jpg','img_snow_wide.jpg','img_mountains_wide.jpg','img_5terre_wide.jpg'];
+    const image = document.querySelector('#slider');
+    // 사진에 images[0]를 src로 지정
+    image.setAttribute('src', images[index]);
+
+
+    function prev() {
+      index--;
+      if(index < 0){
+        index = 3;
+      }
+      image.setAttribute('src', images[index]);
+    }
+
+ function next() {
+      index++;
+      if(index > 3){
+        index = 0;
+      }
+      image.setAttribute('src', images[index]); 
+    }
+  </script>
+</body>
+</html>
