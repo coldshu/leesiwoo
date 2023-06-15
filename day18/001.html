@@ -92,18 +92,10 @@
     </nav>
     <main>
     <aside id="left"></aside>
-      <div class="slider">
-        <div class="slide-wrapper">
-          <img src="img_woods_wide.jpg" alt="Slide 1" width="600px"; >
-          <!-- <img src="img_5terre_wide.jpg" alt="Slide 2" width="600px";>
-          <img src="img_mountains_wide.jpg" alt="Slide 3" width="600px";>
-          <img src="img_snow_wide.jpg" alt="Slide 4" width="600px";> -->
-          </div>
-        </div>
-        <div id="button">
-          </button>
-          <!-- <button type="button" onclick="prev()";></button>
-          <button type="button" onclick="next()";></button> -->
+        <div>
+          <img id="slider" width="500px">
+          <button onclick="prev()" ></button> <!-- &lt;&lt;&lt;-->
+          <button onclick="next()" ></button> <!-- &gt;&gt;&gt; -->
           <i class="fa-sharp fa-solid fa-arrow-right"></i>
         </div>
     </section>
@@ -113,7 +105,27 @@
       <strong>copyright ©2023 All Right Reserved</strong>
   </footer>
   <script>
-    // 흠...
+    let index = 0;
+    const images = ['img_woods_wide.jpg','img_snow_wide.jpg','img_mountains_wide.jpg','img_5terre_wide.jpg'];
+    const image = document.querySelector('#slider');
+    image.setAttribute('src', images[index]);
+
+
+    function prev() {
+      index--;
+      if(index < 0){
+        index = 3;
+      }
+      image.setAttribute('src', images[index]);
+    }
+
+ function next() {
+      index++;
+      if(index > 3){
+        index = 0;
+      }
+      image.setAttribute('src', images[index]); 
+    }
   </script>
   </div>
 </body>
